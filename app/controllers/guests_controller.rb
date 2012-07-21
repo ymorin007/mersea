@@ -9,4 +9,16 @@ class GuestsController < ApplicationController
     #render :layout => 'application'
   end
 
+  def aboutus
+    #render :layout => 'application'
+  end
+  
+  def aboutstmaarten
+    #render :layout => 'application'
+  end
+  
+  def contactus
+    #render :layout => 'application'
+  end
+
 end
