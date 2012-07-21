@@ -1,9 +1,18 @@
+@bodyBackgroundImage: '/assets/background.jpg';
 @import "twitter/bootstrap/bootstrap";
 body { 
 	padding-top: 60px;
+    background-image:url(@bodyBackgroundImage);
+    background-position: center center fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 @import "twitter/bootstrap/responsive";
+
 
 // Set the correct sprite paths
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
