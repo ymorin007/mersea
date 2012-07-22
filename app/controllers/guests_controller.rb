@@ -20,5 +20,9 @@ class GuestsController < ApplicationController
   def contactus
     #render :layout => 'application'
   end
+  
+  def included
+    # render :layout => 'application'
+  end
 
 end
