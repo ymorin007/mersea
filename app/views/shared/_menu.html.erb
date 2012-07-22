@@ -9,12 +9,12 @@
       <a class="brand" href="#">MERSEA VILL&#581;</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><%= link_to "Home", :action => "index" %></li>
-          <li><%= link_to "Pictures", :action => "multimedia" %></li>
-          <li><%= link_to "What's include", :action => "included" %></li>
-          <li><%= link_to "Pricing", :action => "pricing" %></li>
-          <li><%= link_to "About us", :action => "aboutus" %></li>
-          <li><%= link_to "About St. Maarten", :action => "aboutstmaarten" %></li>          
+          <li class="active"><%= link_to "Home", :controller => "guests", :action => "index" %></li>
+          <li><%= link_to "Pictures", :controller => "guests", :action => "multimedia" %></li>
+          <li><%= link_to "What's include", :controller => "guests", :action => "included" %></li>
+          <li><%= link_to "Pricing", :controller => "guests", :action => "pricing" %></li>
+          <li><%= link_to "About us", :controller => "guests", :action => "aboutus" %></li>
+          <li><%= link_to "About St. Maarten", :controller => "guests", :action => "aboutstmaarten" %></li>          
           <li><%= link_to "Contact us", :controller => "contact" %></li>
         </ul>
       </div><!--/.nav-collapse -->

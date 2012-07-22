@@ -40,14 +40,19 @@
 <%= render "shared/menu"%>
 
 <div class="container">
+	
+	<% if flash[:notice] %>
+	  <p class="alert alert-success"><%= flash[:notice] %></p>
+	<% end %>
 
   <!-- Main hero unit for a primary marketing message or call to action -->
   <div class="hero-unit house">
     <div class="row">
-    	<div class="span5 box">
-		    <h1><span class="icon-home"></span> merSea Villa</h1>
-    		<blockquote><p>Please join us in our tropical paradise on the beautiful island of St. Maarten. Discover this unique half French, half Dutch island, blessed with some of the most beautiful beaches in the world, perfect weather year-round, amazing duty-free shopping, mouth-watering restaurants and something for everyone.</p></blockquote>
-    		<p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    	<div class="span5 box2">
+		    <h1 class="alert alert-info"><span class="icon-home"></span> merSea Villa</h1>
+    		<blockquote><p>Please join us in our tropical paradise on the beautiful <strong>island of St. Maarten.</strong> 
+    			Discover this unique half French, half Dutch island, blessed with some of the most beautiful beaches in the world, perfect weather year-round, amazing duty-free shopping, mouth-watering restaurants and something for everyone.</p></blockquote>
+    		<p><%= link_to "Read more", { :action => "aboutus"}, :class => "btn btn-primary btn-large"  %></p>
     	</div>
     </div>
   </div>
