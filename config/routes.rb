@@ -61,5 +61,9 @@ Mersea::Application.routes.draw do
 
   #match '/guests/multimedia', :controller => 'guests', :action => 'multimedia'
   resources :guests
+  
+  resources :events
+
+  get "calendar/index"  
 
 end
