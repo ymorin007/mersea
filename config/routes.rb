@@ -57,13 +57,17 @@ Mersea::Application.routes.draw do
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
+  match 'events' => 'events#create', :as => 'events', :via => :post
+
+  match 'calendars' => 'calendars#show', :as => 'calendar'
+
   match ':controller(/:action(/:id))(.:format)'
 
   #match '/guests/multimedia', :controller => 'guests', :action => 'multimedia'
   resources :guests
   
+  resource :calendars, :only => [:show]
+
   resources :events
-
-  get "calendar/index"  
-
+  
 end

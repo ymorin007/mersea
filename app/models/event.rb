@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
-    
+  
+  attr_accessible :title, :description, :starts_at, :ends_at, :all_day
+  
   scope :before, lambda {|end_time| {:conditions => ["ends_at < ?", Event.format_date(end_time)] }}
   scope :after, lambda {|start_time| {:conditions => ["starts_at > ?", Event.format_date(start_time)] }}
   
@@ -14,7 +16,8 @@ class Event < ActiveRecord::Base
       :end => ends_at.rfc822,
       :allDay => self.all_day,
       :recurring => false,
-      :url => Rails.application.routes.url_helpers.event_path(id)
+      :url => Rails.application.routes.url_helpers.event_path(id),
+      #:color => "red"
     }
     
   end
@@ -22,4 +25,5 @@ class Event < ActiveRecord::Base
   def self.format_date(date_time)
     Time.at(date_time.to_i).to_formatted_s(:db)
   end
+  
 end

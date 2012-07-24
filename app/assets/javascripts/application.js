@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery.rest
+//= require fullcalendar
 //= require twitter/bootstrap
 //= require_tree .
-
