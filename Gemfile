@@ -29,9 +29,15 @@ group :assets do
   
 end
 
+gem 'jquery-ui-rails'
 gem 'jquery-rails'
 
+# https://github.com/plataformatec/devise
+gem 'devise'
+
 gem 'jquery-rest-rails'
+
+gem 'event-calendar', :require => 'event_calendar'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

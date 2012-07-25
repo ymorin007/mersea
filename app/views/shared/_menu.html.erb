@@ -1,24 +1,57 @@
 <div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#">MERSEA VILL&#581;</a>
-      <div class="nav-collapse">
-        <ul class="nav">
-          <li class="active"><%= link_to "Home", :controller => "guests", :action => "index" %></li>
-          <li><%= link_to "Pictures", :controller => "guests", :action => "multimedia" %></li>
-          <li><%= link_to "What's include", :controller => "guests", :action => "included" %></li>
-          <li><%= link_to "Pricing", :controller => "guests", :action => "pricing" %></li>
-          <li><%= link_to "About us", :controller => "guests", :action => "aboutus" %></li>
-          <li><%= link_to "About St. Maarten", :controller => "guests", :action => "aboutstmaarten" %></li>
-          <li><%= link_to "Availabilities", :controller => "calendars" %></li>          
-          <li><%= link_to "Contact us", :controller => "contact" %></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </div>
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+			<a class="brand" href="#">MERSEA VILL&#581;</a>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="active">
+						<%= link_to "Home", root_path %>
+					</li>
+					<li>
+						<%= link_to "Pictures", multimedia_path %>
+					</li>
+					<li>
+						<%= link_to "What's include", included_path %>
+					</li>
+					<li>
+						<%= link_to "Pricing", pricing_path %>
+					</li>
+					<li>
+						<%= link_to "About us", aboutus_path %>
+					</li>
+					<li>
+						<%= link_to "About St. Maarten", stmaarten_path %>
+					</li>
+					<li>
+						<%= link_to "Availabilities", availabilities_path %>
+					</li>
+					<li>
+						<%= link_to "Contact us", contactus_path %>
+					</li>
+					<% if user_signed_in? %>
+					<li>
+						<%= link_to "Reservations", :controller => "events" %>
+					</li>
+					<li>
+						<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+					</li>
+					<% else %>
+					<li>
+						<%= link_to "sign in", new_user_session_path %>
+					</li>
+					<% end %>
+					<% if I18n.locale == I18n.default_locale %>
+					<li>
+						<%= link_to "Français", :locale=>'fr'%>
+					</li>
+					<% else %>
+					<li>
+						<%= link_to "English", :locale=>'en'%>
+					</li>
+					<%end%>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div>
 </div>

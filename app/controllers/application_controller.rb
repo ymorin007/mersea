@@ -1,12 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
-  
   # got these tips from
   # http://lyconic.com/blog/2010/08/03/dry-up-your-ajax-code-with-the-jquery-rest-plugin
-  before_filter :correct_safari_and_ie_accept_headers
+  before_filter :correct_safari_and_ie_accept_headers, :set_locale
   after_filter :set_xhr_flash
 
+  def set_locale
+      I18n.locale = params[:locale] || I18n.default_locale
+  end
+  
+  def default_url_options(options={})
+    logger.debug "default_url_options is passed options: #{options.inspect}\n"
+    { :locale => I18n.locale }
+  end  
+  
   def set_xhr_flash
     flash.discard if request.xhr?
   end

@@ -14,4 +14,6 @@ $(function(){
 	        $('span', this).remove();
 	    }
 	});	
+	
+	$("#event_start_at,#event_end_at").datepicker();
 });

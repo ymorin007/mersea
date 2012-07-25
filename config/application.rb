@@ -69,6 +69,7 @@ module Mersea
       :authentication => :plain,
       :enable_starttls_auto => true
      } 
-    
+  # If you are deploying Rails 3.1 on Heroku, you may want to set (gem devise): 
+  config.assets.initialize_on_precompile = false
   end
 end
