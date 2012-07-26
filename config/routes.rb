@@ -1,10 +1,6 @@
 Mersea::Application.routes.draw do
   devise_for :users
 
-  scope "/:locale" do
-    resources :guests
-  end  
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -63,6 +59,8 @@ Mersea::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
 
+
+
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
@@ -73,15 +71,17 @@ Mersea::Application.routes.draw do
   match ':controller(/:action(/:id))(.:format)'
 
   #match '/guests/multimedia', :controller => 'guests', :action => 'multimedia'
-  
-  match 'multimedia' => 'guests#multimedia', :as => :multimedia
-  match 'included' => 'guests#included', :as => :included
-  match 'pricing' => 'guests#pricing', :as => :pricing
-  match 'aboutus' => 'guests#aboutus', :as => :aboutus
-  match 'aboutstmaarten' => 'guests#aboutstmaarten', :as => :stmaarten
-  match 'availabilities' => 'calendar#index', :as => :availabilities
-  match 'contactus' => 'contact#new', :as => :contactus
-  match 'reservation' => 'events#index', :as => :reservation
-  
+
+  scope "(:locale)", :locale => /en|fr/ do
+    match 'multimedia' => 'guests#multimedia', :as => :multimedia
+    match 'included' => 'guests#included', :as => :included
+    match 'pricing' => 'guests#pricing', :as => :pricing
+    match 'aboutus' => 'guests#aboutus', :as => :aboutus
+    match 'aboutstmaarten' => 'guests#aboutstmaarten', :as => :stmaarten
+    match 'availabilities' => 'calendar#index', :as => :availabilities
+    match 'contactus' => 'contact#new', :as => :contactus
+    match 'reservation' => 'events#index', :as => :reservation
+  end  
+ 
  
 end

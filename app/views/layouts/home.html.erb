@@ -49,10 +49,9 @@
   <div class="hero-unit house">
     <div class="row">
     	<div class="span5 box2">
-		    <h1 class="alert alert-info"><span class="icon-home"></span> merSea Villa</h1>
-    		<blockquote><p>Please join us in our tropical paradise on the beautiful <strong>island of St. Maarten.</strong> 
-    			Discover this unique half French, half Dutch island, blessed with some of the most beautiful beaches in the world, perfect weather year-round, amazing duty-free shopping, mouth-watering restaurants and something for everyone.</p></blockquote>
-    		<p><%= link_to "Read more", { :action => "aboutus"}, :class => "btn btn-primary btn-large"  %></p>
+		    <h1 class="alert alert-info"><span class="icon-home"></span> <%= t "common.villa_mersea" %></h1>
+    		<blockquote><p><%= t "welcome.join_us" %></p></blockquote>
+    		<p><%= link_to t("common.read_more"), { :action => "aboutus"}, :class => "btn btn-primary btn-large"  %></p>
     	</div>
     </div>
   </div>
@@ -61,27 +60,27 @@
   <div class="row">
     <div class="span4">
       <div class="box">
-      <h2><span class="icon-camera"></span> Pictures and videos</h2>
+      <h2><span class="icon-camera"></span> <%= t "common.pictures_videos" %></h2>
       <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><%= link_to "View more ",{ :action => "multimedia"}, :class => "btn btn-primary btn-large" %></p>
+      <p><%= link_to t("common.view_detail"),{ :action => "multimedia"}, :class => "btn btn-primary btn-large" %></p>
       </div>
     </div>
     <div class="span4">
       <div class="box">
-      <h2><span class="icon-gift"></span> What's included?</h2>
+      <h2><span class="icon-gift"></span> <%= t "common.whats_included" %></h2>
       <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><%= link_to "View details",{ :action => "included"}, :class => "btn btn-primary btn-large" %></p>
+      <p><%= link_to t("common.view_detail"),{ :action => "included"}, :class => "btn btn-primary btn-large" %></p>
       </div>
     </div>
     <div class="span4">
       <div class="box">
-      <h2><span class="icon-tag"></span> Pricing</h2>
+      <h2><span class="icon-tag"></span> <%= t "common.pricing" %></h2>
       <p>Weekly rates <span class="label label-info">per couple</span>:
   		<div><span class="icon-thumbs-up"></span> Low season (May 1 to October 31): <strong>US$1100</strong></div>
   		<div><span class="icon-thumbs-up"></span> <span class="icon-thumbs-up"></span> High season (November 1 to April 30): <strong>US$1500</strong></div>
   		<div><span class="icon-thumbs-up"></span> <span class="icon-thumbs-up"></span> <span class="icon-thumbs-up"></span> Christmas and New Year weeks (per week): <strong>US$2200</strong></div>
 	  </p>
-      <p><%= link_to "View details", {:action => "pricing"}, :class => "btn btn-primary btn-large" %></p>
+      <p><%= link_to t("common.view_detail"), {:action => "pricing"}, :class => "btn btn-primary btn-large" %></p>
         </div>
     </div>
   </div>
