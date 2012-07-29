@@ -1,0 +1,1 @@
+$(function(){$("a").imgPreview({containerID:"imgPreviewWithStyles",imgCSS:{},onShow:function(e){},onHide:function(e){$("span",this).remove()}}),$("#event_start_at,#event_end_at").datepicker()});
